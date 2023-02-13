@@ -13,19 +13,19 @@ public class MabayaBO {
     public void login(){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         driver.get("https://backoffice.mabaya.com");
-        //clears field and sends userID
+        //Clears field and sends userID
         driver.findElement(By.cssSelector("input[type='email']")).clear();
         driver.findElement(By.cssSelector("input[type='email']"))
-                .sendKeys("interviewtestuser3005@mabaya.com");
+                .sendKeys("Email");
         //Clears and sends pw
         driver.findElement(By.cssSelector("input[type='password']")).clear();
         driver.findElement(By.cssSelector("input[type='password']"))
-                .sendKeys("goodLuck!");
+                .sendKeys("Password");
         // Clicks on send
         driver.findElement(By.cssSelector("button[type='submit']")).click();
     }
     public void chooseLastYear() {
-       //click on billing
+       // Click on billing
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(3));
         WebElement billing = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
                 "//*[@id=\"admin-main-menu\"]/li[5]/div/a/span[2]")));
@@ -34,7 +34,7 @@ public class MabayaBO {
        driver.findElement(By.xpath("//*[@id=\"admin-intro-full-page\"]" +
                 "/backoffice-admin-billing/div/div[2]/div/div/ul/li[2]/fieldset/div/" +
                "select-date-range/div/button")).click();
-       //Click on "Last Year"
+       // Click on "Last Year"
        driver.findElement(By.xpath("//*[@id=\"admin-intro-full-page\"]/backoffice-admin-billing/div/div[2]" +
                "/div/div/ul/li[2]/fieldset/div/select-date-range/div/div/button[5]")).click();
 
